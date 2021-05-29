@@ -1,0 +1,32 @@
+<%- include('shared/header.ejs') %>
+ 
+
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-8 m-auto card p-5">
+                <div class="">
+                    <h3>Account Setting</h3>
+                    <hr>
+                    <form action="/handlesetting" method="POST">
+                        <input name="oldPass" placeholder="Enter Old Password" type="text" class="form-control my-2">
+                        <input name="newPass" placeholder="New Password" type="password" class="form-control my-2">
+                        <% if (errors.find(e=>e.param=='newPass')) { %>
+                            <div class="alert alert-danger">
+                                The password must contain at least 1 number
+                            </div>
+                        <% } %>
+                        <input name="repeatPass" placeholder="Repeat Password" type="password" class="form-control my-2">
+                        <button class="btn btn-info mt-3">Save Setting</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<%- include('shared/footer.ejs') %>
